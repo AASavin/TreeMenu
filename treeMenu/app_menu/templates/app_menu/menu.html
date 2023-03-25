@@ -1,0 +1,9 @@
+{% load menu %}
+<ul>
+    {% for item in menu_items %}
+        <li><a href="{{ item.object.url }}">{{ item.object.name }}</a></li>
+        {% if item.children %}
+            {% print_children item %}
+        {% endif %}
+    {% endfor %}
+</ul>
